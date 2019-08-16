@@ -1,0 +1,59 @@
+body{
+    background: white;
+    margin: 0 0 0 0;
+}
+
+h1{
+    margin-bottom: 0px;
+    border-width: 4px 4px 4px 4px;
+    border-color: white;
+    font-weight: 900;
+}
+
+p{
+}
+
+#body_text{
+    height: 70%;
+    width: 100%;
+    font-size: 18;
+}
+
+#headline{
+    height: 20%;
+    width: 100%;
+    font-size: 25;
+    
+}
+
+#headline_body_div{
+    height: 300px;
+    width: 70%;
+    margin: 0 auto 0;
+}
+
+.button{
+    height: 10%; 
+    width: 15%;
+    justify-content: right;
+    justify-items: right;
+}
+
+#buttons{
+    justify-items: right;
+    justify-content: right;
+}
+
+#main_div_1{
+    width:50%;
+    height: 100%;
+    background:rgba(37, 100, 129, 0.76);
+    color: white;
+}
+
+#main_div_2{
+    width:50%;
+    height: 100%;
+    background:white;
+    color: purple;
+}
