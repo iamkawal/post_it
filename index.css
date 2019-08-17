@@ -11,6 +11,7 @@ h1{
 }
 
 p{
+    font-size: 18;
 }
 
 #body_text{
@@ -45,15 +46,18 @@ p{
 }
 
 #main_div_1{
+    float: left;
     width:50%;
     height: 100%;
-    background:rgba(37, 100, 129, 0.76);
+    background: purple;
     color: white;
 }
 
 #main_div_2{
-    width:50%;
+    float: left;
+    width:49%;
     height: 100%;
     background:white;
     color: purple;
+    padding-left: 1%;
 }
