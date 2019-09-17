@@ -113,7 +113,7 @@ function success_message(){
 			note_added.classList.remove("text-success")	
 		}, 3000)
 			
-		no_notes.remove()
+		no_notes.style.display = "None"
 }	
 
 function set_and_push_notes(headline, note){
@@ -125,5 +125,30 @@ function set_and_push_notes(headline, note){
 }
 
 function push_delete_button(delete_button){
+	var headline = delete_button.parentElement.previousElementSibling.children[0].textContent
+
+	//deleting the object from the array
+	function foo(element, index, array){
+		return element["headline"]==headline
+	}
+	var index = all_notes.findIndex(foo, headline)
+	all_notes.splice(index, 1)
+
+	//deleting visual html
+	delete_button.parentElement.parentElement.nextElementSibling.remove()
 	delete_button.parentElement.parentElement.remove()
+
+	if(all_notes.length == 0){
+		no_notes.style.display = "block"
+		// var p = document.createElement("p")
+		// var div = document.createElement("div")
+		// div.classList.add("d-flex", "justify-content-center")
+		// p.id = "no_notes"
+		// p.textContent = "Ooooh so empty here.."
+		// div.appendChild(p)
+		// main_div_2.appendChild(div)
+	}
+
+	//keeping up the count
+	count--
 }
