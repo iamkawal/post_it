@@ -19,16 +19,31 @@ function add_new_note(headline, note_detail){
 	var detail_div = document.createElement("div")
 	var card_div = document.createElement("div")
 	var date = new Date()
-	
-	//This id is always unique to the headline and helps in making the dropdown of notes
-	id = date.toDateString().slice(0,3) + Date.now().toString()
+	// var edit_icon = document.createElement("img")
+	var delete_icon = document.createElement("img")
+	var icons = document.getElementsByClassName("icons")
+	var icons_div = document.createElement("div")
 
+	//Setting up the icons
+	icons_div.id = "icons_div"
+	// edit_icon.src = "icons/edit.svg"
+	// edit_icon.classList.add("icons")
+	delete_icon.src = "icons/delete.svg"
+	delete_icon.classList.add("icons")
+	icons_div.classList.add("mt-1", "d-flex", "flex-row-reverse", "bd-highlight")
+	icons_div.appendChild(delete_icon)
+	// icons_div.appendChild(edit_icon)
+
+	delete_icon.addEventListener("click", function(){
+		push_delete_button(this)
+	})
+	//This id is always unique to the newly created headline under Previous Notes and helps in making the dropdown of notes
+	id = date.toDateString().slice(0,3) + Date.now().toString()
 
 	//These  classes are needed to be in these elements for bootstrap to function properly
 	headline_container.classList.add("d-flex", "w-100", "justify-content-between")
-	
 	new_a.classList.add("list-group-item", "list-group-item-action",
-	 "flex-column", "align-items-start", "rounded", "mt-2", "btn", "btn-primary", "collapsed") 
+	 "flex-column", "align-items-start", "rounded", "mt-0", "py-0.75", "btn", "btn-primary", "collapsed","font-weight-bold") 
 	new_h5.classList.add("mb-1")
 
 	//Setting the attributes as bootstrap requires..
@@ -37,13 +52,14 @@ function add_new_note(headline, note_detail){
 	new_a.setAttribute("role", "button")
 	new_a.setAttribute("aria-expanded", "false")
 	new_a.setAttribute("aria-controls", id)
+	new_a.style.fontWeight = "700"
 
 	//Again bootstrap settings
 	detail_div.classList.add("collapse")
 	detail_div.id = id
 	card_div.classList.add("card", "card-body")
 
-	//Adding elements to html
+	//Adding elements to html in order they are needed
 	card_div.innerText = note_detail
 	detail_div.appendChild(card_div)
 
@@ -55,6 +71,7 @@ function add_new_note(headline, note_detail){
 	new_a.appendChild(headline_container)
 	list_div.appendChild(new_a)
 	new_a.after(detail_div)
+	new_a.appendChild(icons_div)
 	
 }
 
@@ -96,7 +113,7 @@ function success_message(){
 			note_added.classList.remove("text-success")	
 		}, 3000)
 			
-		no_notes.textContent = ""
+		no_notes.remove()
 }	
 
 function set_and_push_notes(headline, note){
@@ -105,4 +122,8 @@ function set_and_push_notes(headline, note){
 	all_notes[count].note = note
 	add_new_note(all_notes[count].headline, all_notes[count].note)
 	count++
+}
+
+function push_delete_button(delete_button){
+	delete_button.parentElement.parentElement.remove()
 }
