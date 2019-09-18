@@ -9,7 +9,7 @@ no_notes        =      document.getElementById("no_notes"),
 main_div_2      =      document.getElementById("main_div_2"),
 note_headings   =      document.getElementsByClassName("note_heading"),
 list_div        =      document.getElementById("list-group")
-list_group_div  =     $("#list-group-item")
+// list_group_div  =     $("#list-group-item")
 
 function add_new_note(headline, note_detail){
 	var new_a = document.createElement("a")
