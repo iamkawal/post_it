@@ -4,8 +4,8 @@ var express       = require("express"),
     body_parser   = require("body-parser")
 
 mongoose.connect("mongodb://localhost/post_it")
-app.set("view engine", "html")
-app.use(express.static("static"))
+app.set("view engine", "ejs")
+app.use(express.static("public"))
 app.use(body_parser.urlencoded({extended:true}))
 
 //SCHEMA SETUP
@@ -27,7 +27,6 @@ var Note = mongoose.model("note", note_schema)
 //         console.log(note)
 //     }
 // })
-
 
 app.post("/", function(req, res){
     var headline = req.body.headline

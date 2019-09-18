@@ -1,0 +1,74 @@
+h1{
+    font-family: 'Pacifico', cursive !important;
+}
+
+#h1_div{
+    background-color:white; 
+}
+
+h3{
+    font-family: 'Montserrat', serif !important;
+    font-weight: 600;
+}
+
+h5{
+    font-family: 'Montserrat', serif !important;
+    font-weight: 500;
+}
+body{
+    background-color: rgba( 213, 216, 220 , 0.5)   !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-weight: 700; 
+    font-size: 20px;
+}
+
+p{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-weight: 700; 
+    font-size: 20px;
+}
+
+.empty{
+    border: 4mm solid  #fc4040 ;
+}
+
+.card{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-size: 18px;
+    border-left: solid #343a40 !important;
+}
+
+
+.fade .list-group-item {
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    height: 2em;
+  }
+  .fade .list-group-item.show {
+    opacity: 1;
+  }
+
+.border-danger-2{
+    border: 2px solid  #fc4040 !important;
+}
+
+#body_text{
+    transition: all 0.125s;
+}
+
+#headline{
+    transition: all 0.125s;
+}
+
+.icons{
+    height: 25px;
+    width: 27px;
+    transition: all 0.12s;
+    margin-right: 10px;
+
+}
+
+.icons:hover{
+    height: 32px;
+    width: 32px;
+}

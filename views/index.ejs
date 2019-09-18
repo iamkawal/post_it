@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post it!</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Montserrat:500|Pacifico&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div id="h1_div" class="d-flex justify-content-center mt-3 mb-4 shadow p-3"><h1 >Welcome to Post it!</h1></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" id="main_div_1" >
+                    <div id="headline_body_div">
+                        <div class="d-flex justify-content-center"><h3>Post new notes here</h3></div>
+                        <form method="POST" action="/">
+                            <div class="form-group">
+                                <input class="form-control form-control-lg font-weight-bold" type="text" placeholder="Headline" id="headline" name="headline">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Notes :D" id="body_text" style="font-size: 18px" name="detail"></textarea>
+                            </div>
+                            <div class="form-group" id="buttons">
+                                <button type="submit" id = "submit" class="btn btn-dark">Submit</button>
+                                <p class="d-inline font-weight-bold ml-4" id="note_added"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm ml-3" id="main_div_2">
+                    <div class="d-flex justify-content-center"><h3>Previous Notes</h3></div>
+                    <div class="d-flex justify-content-center"><p id="no_notes" class="font-weight-bold">Ooooh so empty here...</p></div>
+                    <div class="list-group" id = "list-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
